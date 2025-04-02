@@ -85,6 +85,6 @@ def config_syslog_cisco(key_file_path = "secret.key", config_file_path = "config
             print(f"{device_info['device_type']} - Vendor is not Cisco, Skipping device")
 
 if __name__ == "__main__":
-    genKey()
-    encrypt_passwords()
+    #genKey()
+    #encrypt_passwords()
     config_syslog_cisco()

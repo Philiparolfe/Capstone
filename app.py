@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -13,12 +13,27 @@ def get_logs():
     return logs
 
 @app.route('/')
-def home():
+def logs():
     # Get logs from the database
     logs = get_logs()
     
     # Render the logs in the frontend
     return render_template('logs.html', logs=logs)
+
+# CRUD Operations:
+
+#DELETE:
+@app.route('/delete/<int:log_id>')
+def delete_log(log_id):
+    conn = sqlite3.connect('syslogs.db')
+    c = conn.cursor()
+    c.execute('DELETE FROM logs WHERE id = ?', (log_id,))
+    conn.commit()
+    conn.close()
+    return redirect(url_for('logs'))
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

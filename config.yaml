@@ -2,9 +2,9 @@ devices:
   R1:
     device_type: cisco_ios
     host: 192.168.100.2
-    password: gAAAAABnwlw9bzea2wK4ENrZHIs4fcWoXvqZYKhNj91bynbzIoE7hanZ_3xUcrmXDf-gGwgVZpp0K9k_WQKviy3howk-g0VlBA==
+    password: gAAAAABnyw_7eUom1UIqXYhhUlO_jo7kJJpNkQ_ibVcD2jI64d1AFu3BWGrIZ6EnxJYB_mfmng4vMqGC3pHu2q7HBvHySstj2A==
     port: 22
-    secret: gAAAAABnwlw9jsw2fj_UjADgumqqqvQSzmELFYSdMuV6oIDxt-PC10zzlSyk5umBNHaYq9fzrAuyxuveiyj8yYpg9utFle3nCg==
+    secret: gAAAAABnyw_7dXBUY21d0KS6SS8w_Xmy9NUzVffG6gLFRA8Hn3x4z_RuWEBdIbiLwmqz1vxu9bNhGjwhvRoyYQ1F9jLNngEIRg==
     username: admin
 syslog_server:
   ip: 192.168.100.10

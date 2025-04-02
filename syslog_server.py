@@ -3,6 +3,11 @@ import signal
 import sys
 import sqlite3
 from datetime import datetime
+import requests
+
+URL = "http://127.0.0.1:8000/db_updated"  # Adjust if running on a different host/port
+
+
 
 def create_db():
     """ Creates a database and log table if it doesn't exist """
@@ -89,5 +94,10 @@ def syslog_server(host='0.0.0.0', port=514):
         insert_log(timestamp, source_ip, syslog_severity, parsed_message)
         
         print(f"Log received from {source_ip}: {parsed_message}")
+        response = requests.post(URL)
+        if response.status_code == 200:
+            print("Success:", response.json())
+        else:
+            print("Error:", response.status_code, response.text)
 
 syslog_server()
